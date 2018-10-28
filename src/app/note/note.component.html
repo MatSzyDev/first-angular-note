@@ -1,0 +1,14 @@
+<div class="note note-{{ note.date }}" *ngFor="let note of notes">
+  <span class="date">{{ note.date }}</span>
+  <span class="id">#{{ note.id }}</span>
+  <div class="value">
+    {{ note.value }}
+  </div>
+  <span class="tag">{{ note.tag | uppercase }}</span>
+</div>
+
+<!-- <div>
+  <label>value:
+    <input [(ngModel)]="note.value" placeholder="value">
+  </label>
+</div> -->
