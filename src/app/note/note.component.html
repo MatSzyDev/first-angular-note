@@ -1,14 +1,26 @@
-<div class="note note-{{ note.date }}" *ngFor="let note of notes">
-  <span class="date">{{ note.date }}</span>
-  <span class="id">#{{ note.id }}</span>
+<!-- <div>
+  <label>value:
+    <input [(ngModel)]="notes[1].value" placeholder="value">
+  </label>
+</div> -->
+
+<div class="edit" *ngIf="selectedNote">
+
+    <span class="id">#{{selectedNote.id}}</span>
+    <span class="date">{{selectedNote.date}}</span>
+    <textarea [(ngModel)]="selectedNote.value" name="value" class="value"></textarea>
+
+
+</div>
+
+
+<div class="note note-{{ note.date }}" *ngFor="let note of notes" [class.selected]="note === selectedNote">
+  <div class="top">
+    <span class="date">{{ note.date }}</span>
+    <span class="id" (click)="onSelect(note)">#{{ note.id }}</span>
+  </div>
   <div class="value">
     {{ note.value }}
   </div>
   <span class="tag">{{ note.tag | uppercase }}</span>
 </div>
-
-<!-- <div>
-  <label>value:
-    <input [(ngModel)]="note.value" placeholder="value">
-  </label>
-</div> -->

@@ -1,18 +1,41 @@
+.edit {
+  margin: 2% 2% auto;
+  padding: .5% .5% 0 1%;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  span {
+    margin-right: 20px;
+    float: left;
+    font-size: 20px;
+    line-height: 40px;
+  }
+  .value {
+    width: calc(100% - 200px);
+    height: 35px;
+    border: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+}
+
 .note {
-  margin: 2%;
-  width: 29%;
+  margin: 2% 0 0 2%;
+  padding: 1%;
+  width: 28.75%;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
   float: left;
-  &-0 {
+  &-10 {
     display: none;
   }
-  .date {
-    width: 50%;
-    float: left;
+  &.selected {
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
   }
-  .id {
-    width: 50%;
+  .top {
+    width: 100%;
     float: left;
-    text-align: right;
+    .id {
+      float: right;
+      cursor: pointer;
+    }
   }
   .value {
     float: left;
